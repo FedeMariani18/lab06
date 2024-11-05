@@ -48,11 +48,11 @@ public final class TestSocialNetworkUser {
          * 
          * * Adam Smith, asmith, (no age)
          */
-        final SocialNetworkUser<User> kbacon = null; //TODO
-        final SocialNetworkUser<User> dwashington = null; //TODO
-        final SocialNetworkUser<User> mgladwell = null; //TODO
-        final SocialNetworkUser<User> ntaleb = null; //TODO
-        final User asmith = null; //TODO
+        final SocialNetworkUser<User> kbacon = new SocialNetworkUserImpl<User>("Kevin", "Bacon", "kbacon", 56); //TODO
+        final SocialNetworkUser<User> dwashington =  new SocialNetworkUserImpl<User>("Denzel", "Washington", "dwashington", 59);
+        final SocialNetworkUser<User> mgladwell =  new SocialNetworkUserImpl<User>("Malcom", "Gladwell", "mgladwell", 51);
+        final SocialNetworkUser<User> ntaleb =  new SocialNetworkUserImpl<User>("Nicholas", "Taleb", "ntaleb", 54);
+        final User asmith =  new UserImpl("Adam", "Smith", "asmith");
         /*
          * Make people follow each other
          */
@@ -61,7 +61,7 @@ public final class TestSocialNetworkUser {
         dwashington.addFollowedUser(WRITERS, ntaleb);
         dwashington.addFollowedUser("colleagues", kbacon);
         dwashington.addFollowedUser(WRITERS, mgladwell);
-        /*
+         /*
          * No test should fail
          */
         assertTrue("smith has not set any age at all", !asmith.isAgeDefined());
